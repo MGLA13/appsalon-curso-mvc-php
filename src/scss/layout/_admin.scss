@@ -1,0 +1,74 @@
+
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+h2{
+    margin: 8rem 0 3rem 0;
+}
+
+.appointments{
+
+    list-style: none;
+    padding: 0;
+
+    li{
+
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+
+        &:first-of-type{
+            border: 0;
+        }
+
+        p{
+            font-weight: v.$bold;
+            color: v.$azul;
+        }
+
+        span, .service{
+            font-weight: v.$regular;
+            color: v.$blanco;
+        }
+
+    }
+
+
+}
+
+
+.services-bar{
+    margin-top: 2rem;
+    margin-bottom: v.$separacion;
+
+    @include m.tablet{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button{
+        margin: 0 0 1rem 0;
+    }
+}
+
+
+.services{
+
+    //COn la directiva @extend heredamos los estilos dados a la clase appointments
+    @extend .appointments;
+
+
+    .actions{
+        margin: 0;
+    }
+
+    
+    .button,.delete-button{
+
+        margin: 2rem 0;
+
+        @include m.tablet{
+            margin: 0;
+        }
+    }
+}

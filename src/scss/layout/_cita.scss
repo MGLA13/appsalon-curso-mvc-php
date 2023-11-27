@@ -1,0 +1,51 @@
+
+//Importar variables y mixins
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.section {
+
+    padding: 5rem 0;
+    display: none;
+
+    .subtitle{
+        text-align: center;
+    }
+
+}
+
+.view{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.bar{
+
+    display: flex;
+    flex-direction: column;        
+    align-items: flex-end;
+    gap: 2rem;
+
+    @include m.tablet{
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+  
+    p, a{
+        margin: 0;
+    }
+
+    a{ 
+        padding: 0;
+
+        @include m.only-mobile{
+            width: auto;
+        }
+
+    }
+}

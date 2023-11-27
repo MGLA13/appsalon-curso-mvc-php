@@ -1,0 +1,46 @@
+//Carpeta componentes, se crean estilos que pueden compartir mas de un elemento de diferentes archivos
+
+
+//Importar variables y mixins
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.form{
+
+    margin-top: 5rem;
+    width: 100%;
+
+}
+
+.input{
+
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label{
+        flex: 0 0 10rem;
+    }
+
+    input{
+        flex: 1;
+        border: none;
+        padding: calc(v.$separacion / 4);
+        border-radius: 1rem;
+
+        //pseudoclase disabled
+        &:disabled{
+            background-color: lighten(v.$negro, 30%);
+            color: v.$blanco;
+            cursor: not-allowed;
+        }
+
+
+    }
+
+    input[type="text"],input[type="number"],input[type="email"],
+    input[type="password"],input[type="tel"]{
+        width: 100%; 
+    }
+}

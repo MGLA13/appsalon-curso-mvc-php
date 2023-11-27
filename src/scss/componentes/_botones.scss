@@ -1,0 +1,22 @@
+
+//Importar variables y mixins
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.button{
+
+    @include m.boton(v.$azul,v.$blanco);
+
+}
+
+
+.delete-button{
+
+    @include m.boton(v.$rojo,v.$blanco);
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
